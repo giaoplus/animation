@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .content {
+      width: 100%;
+      height: 100vh;
+      background-color: antiquewhite;
+      position: relative;
+      overflow: hidden;
+    }
+    .main-top {
+      width: 300px;
+      height: 150px;
+      border-radius: 150px 150px 0 0;
+      background-color: coral;
+      position: absolute;
+      left: calc(50% - 150px);
+      top: calc(50% - 150px);
+      z-index: 2;
+    }
+    .main-bottom {
+      width: 300px;
+      height: 150px;
+      border-radius: 0 0 150px 150px;
+      background-color: coral;
+      position: absolute;
+      left: calc(50% - 150px);
+      top: 50%;
+      z-index: 1;
+    }
+    .fir {
+      width: 800px;
+      height: 800px;
+      border-radius: 50%;
+      border: 2px solid rgb(122, 122, 122);
+      position: absolute;
+      left: calc(50% - 400px);
+      top: calc(50% - 400px);
+      transform-style: preserve-3d;
+      animation: planet-rotate1 20s linear infinite;
+      z-index: 1;
+    }
+
+    .fir .ball {
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      border-radius: 50%;
+      background-color: yellowgreen;
+      color: #ffffff;
+      text-align: center;
+      line-height: 50px;
+    }
+
+    .sec {
+      width: 1600px;
+      height: 1600px;
+      border-radius: 50%;
+      border: 2px solid rgb(122, 122, 122);
+      position: absolute;
+      left: calc(50% - 800px);
+      top: calc(50% - 800px);
+      transform-style: preserve-3d;
+      animation: planet-rotate1 20s linear infinite;
+      z-index: 1;
+    }
+
+    .sec .ball {
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      border-radius: 50%;background-color: cornsilk;
+      color: #ffd311;
+      text-align: center;
+      line-height: 50px;
+    }
+
+    .ball1 {
+      left: calc(50% - 25px);
+      top: -25px;
+      animation: self-rotate1 20s linear infinite;
+    }
+
+    .ball2 {
+      left: calc(90% - 25px);
+      top: calc(20% - 25px);
+      animation: self-rotate1 20s linear infinite;
+    }
+
+    .ball3 {
+      left: calc(90% - 25px);
+      top: calc(80% - 25px);
+      animation: self-rotate1 20s linear infinite;
+    }
+
+    .ball4 {
+      left: calc(50% - 25px);
+      top: calc(100% - 25px);
+      animation: self-rotate1 20s linear infinite;
+    }
+
+    .ball5 {
+      left: calc(10% - 25px);
+      top: calc(80% - 25px);
+      animation: self-rotate1 20s linear infinite;
+    }
+
+    .ball6 {
+      left: calc(10% - 25px);
+      top: calc(20% - 25px);
+      animation: self-rotate1 20s linear infinite;
+    }
+
+    /* 轨道动画 */
+    @keyframes planet-rotate1 {
+      0% {
+        transform: rotate(0deg) scaleY(0.1) rotate(0deg);
+      }
+      100% {
+        transform: rotate(0deg) scaleY(0.1) rotate(360deg);
+      }
+    }
+
+    @keyframes planet-rotate2 {
+      0% {
+        transform: rotate(0deg) scaleY(0.1) rotate(60deg);
+      }
+      100% {
+        transform: rotate(0deg) scaleY(0.1) rotate(420deg);
+      }
+    }
+
+    /* 球动画 */
+    @keyframes self-rotate1 {
+      0% {
+        transform: rotate(0) scaleY(9) rotate(0deg);
+      }
+      100% {
+        transform: rotate(-360deg) scaleY(9) rotate(0deg);
+      }
+    }
+
+    @keyframes self-rotate2 {
+      0% {
+        transform: rotate(-60deg) scaleY(9) rotate(0deg);
+      }
+      100% {
+        transform: rotate(300deg) scaleY(9) rotate(0deg);
+      }
+    }
+
+    @keyframes self-rotate3 {
+      0% {
+        transform: rotate(-1200deg) scaleY(9) rotate(0deg);
+      }
+      100% {
+        transform: rotate(240deg) scaleY(9) rotate(0deg);
+      }
+    }
+
+    @keyframes self-rotate4 {
+      0% {
+        transform: rotate(-180deg) scaleY(9) rotate(0deg);
+      }
+      100% {
+        transform: rotate(180deg) scaleY(9) rotate(0deg);
+      }
+    }
+
+    @keyframes self-rotate5 {
+      0% {
+        transform: rotate(-240deg) scaleY(9) rotate(0deg);
+      }
+      100% {
+        transform: rotate(120deg) scaleY(9) rotate(0deg);
+      }
+    }
+
+    @keyframes self-rotate6 {
+      0% {
+        transform: rotate(-300deg) scaleY(9) rotate(0deg);
+      }
+      100% {
+        transform: rotate(60deg) scaleY(9) rotate(0deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <section id="app">
+    <canvas id="main"></canvas>
+  </section>
+  <section class="content">
+    <div class="main-top"></div>
+    <div class="main-bottom"></div>
+    <div class="fir">
+      <span class="ball ball1">11</span>
+      <span class="ball ball2">22</span>
+      <span class="ball ball3">33</span>
+      <span class="ball ball4">44</span>
+      <span class="ball ball5">55</span>
+      <span class="ball ball6">66</span>
+    </div>
+    <div class="sec">
+      <span class="ball ball1">11</span>
+      <span class="ball ball2">22</span>
+      <span class="ball ball3">33</span>
+      <span class="ball ball4">44</span>
+      <span class="ball ball5">55</span>
+      <span class="ball ball6">66</span>
+    </div>
+  </section>
+</body>
+</html>
